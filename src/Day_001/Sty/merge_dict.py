@@ -15,5 +15,6 @@ def merge_dict_temp(dic1, dic2):
     c.update(dic2)
     return c
 
+
 a = {}
 merge_dict()
