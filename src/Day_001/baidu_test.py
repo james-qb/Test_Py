@@ -8,6 +8,8 @@ import unittest
 import os
 import time
 from selenium import webdriver
+from selenium.common.exceptions import WebDriverException;
+from selenium.webdriver.chrome.webdriver import WebDriver
 
 
 class Baidu(unittest.TestCase):
@@ -27,9 +29,13 @@ class Baidu(unittest.TestCase):
     def setUp(self):
         self.url = 'http://uatcas.cre.com.hk/dmp-fresh-frontend'
         self.driver = webdriver.Chrome(executable_path="D:\\chromedriver\\chromedriver.exe")
-        self.driver.get(self.url)
-        self.driver.maximize_window()
-        self.driver.implicitly_wait(10)
+        try:
+            self.driver.get(self.url)
+            self.driver.maximize_window()
+            self.driver.implicitly_wait(10)
+        except WebDriverException as e:
+            print("网络不可达 " + str(e))
+            raise
 
     def tearDown(self):
         self.driver.close()
@@ -47,7 +53,7 @@ class Baidu(unittest.TestCase):
         self.assertEqual(id_element.text, "欢迎您：水产系统管理员", msg='登录账号不正确')
 
     def test_2_purchase(self):
-        driver = self.driver
+        driver: WebDriver = self.driver
         time.sleep(3)
         driver.find_element_by_name('username').clear()
         driver.find_element_by_name('username').send_keys('chenxiaojun56')
