@@ -8,7 +8,7 @@ import unittest
 import os
 import time
 from selenium import webdriver
-from selenium.common.exceptions import WebDriverException;
+from selenium.common.exceptions import WebDriverException
 from selenium.webdriver.chrome.webdriver import WebDriver
 
 
@@ -68,9 +68,6 @@ class Baidu(unittest.TestCase):
         driver.find_element_by_xpath('//form/div[1]/div/div/input').send_keys('P20040070')
         driver.find_element_by_xpath('//form/div[1]/div/div/div/button').click()
         time.sleep(3)
-        code_str = driver.find_element_by_xpath('//div[@class="list-item"][1]/div/span[2]/span[1]')
+        code_str = driver.find_element_by_xpath('//div[@class="list-i tem"][1]/div/span[2]/span[1]')
         time.sleep(2)
         self.assertEqual(code_str.text, 'P20040070', msg='不正确')
-
-
-

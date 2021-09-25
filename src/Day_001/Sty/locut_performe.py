@@ -21,13 +21,13 @@ class UserBehavior(TaskSet):
     @task(1)
     def list_header(self):
         r = self.client.get("/homepage/list_header.html")
-        if json.loads((r.content))["result"] != 100:
+        if json.loads(r.content)["result"] != 100:
             r.failure("Got wrong response:" + r.content)
 
     @task(2)
     def list_goods(self):
         r = self.client.get("/homepage/list_goods.html")
-        if json.loads((r.content))["result"] != 100:
+        if json.loads(r.content)["result"] != 100:
             r.failure("Got wrong response:" + r.content)
 
 
@@ -47,4 +47,4 @@ class MobileUserLocust(HttpUser):
 
 if __name__ == '__main__':
     f_name = os.path.basename(sys.argv[0])
-    subprocess.Popen("locust -f .\%s --host=http://api.g.caipiao.163.com"%f_name, shell=True)
+    subprocess.Popen("locust -f .\{0} --host=http://api.g.caipiao.163.com".format(f_name), shell=True)
