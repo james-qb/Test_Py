@@ -20,7 +20,7 @@ def compare(pic1, pic2):
     try:
         image1 = Image.open(pic1)
         image2 = Image.open(pic2)
-    except FileNotFoundError as e:
+    except (FileNotFoundError, IOError) as e:
         print(e)
     else:
         histogram1 = image1.histogram()
