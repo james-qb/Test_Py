@@ -5,10 +5,11 @@
 # @File    : test_test.py
 # @Software: PyCharm
 import json
-import requests
 from collections import Iterable
+
 import numpy as np
-import json
+import requests
+
 #     [1, 2], [2, 3], [3, 4], [4, 5]
 # ]
 # print(*a_list)
@@ -35,11 +36,13 @@ req = {"REQUEST": {"API_ATTRS": {"Partner_ID": "10000000", "App_Sub_ID": "100000
 # print(json_fp)
 url = 'https://apiuat.cresz.com.cn/openapi/?model=rs'
 header = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36",
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/78.0.3904.97 Safari/537.36",
     "Content-Type": "application/json;charset=UTF-8"
 }
 # data = '{"model": "rs"}'
 res = requests.request('POST', url, json=req, headers=header)
+
 print(res.url)
 print(res.status_code)
 print(type(res.json()))
@@ -59,8 +62,6 @@ def flatten(input_arr, out_arr=None):
 
 
 temp_list = [[1, 2, [3, 4]], [[5, 6], [7, 8]], [[9, [10, [11]]]]]
-
-
 
 print(flatten(temp_list))
 
