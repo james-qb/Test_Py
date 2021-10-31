@@ -71,3 +71,4 @@ class Baidu(unittest.TestCase):
         code_str = driver.find_element_by_xpath('//div[@class="list-i tem"][1]/div/span[2]/span[1]')
         time.sleep(2)
         self.assertEqual(code_str.text, 'P20040070', msg='不正确')
+        self.assertEqual(code_str.text, 'P20040070', msg='正确')
