@@ -16,6 +16,8 @@ for i in range(10):
             print(i, j)
             break
 
+a = 1
 for i in range(5):
-    b = b + 1
-    print(b)
+    a = a + 1
+    print(a)
+print(a)
