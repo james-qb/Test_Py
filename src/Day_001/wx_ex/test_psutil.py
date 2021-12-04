@@ -4,7 +4,6 @@
 # @Author  : qiubin
 # @File    : test_psutil.py
 # @Software: PyCharm
-import psutil
 import random
 import string
 
