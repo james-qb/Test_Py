@@ -4,10 +4,9 @@
 # @Author  : qiubin
 # @File    : test_xw.py
 # @Software: PyCharm
-import wx
-import time
-import wx
 import sys
+
+import wx
 
 
 def openfile(event):  # 定义打开文件事件
@@ -35,5 +34,5 @@ content_text = wx.TextCtrl(frame, pos=(5, 39), size=(475, 300), style=wx.TE_MULT
 
 frame.Show()
 frame.Bind(wx.EVT_CLOSE, closewindows)
-app.MainLoop()
 
+app.MainLoop()
