@@ -9,11 +9,11 @@
 # MIMEImage：定义邮件的图片数据
 # MIMEMultipart：负责将文字图片音频组装在一起添加附件
 import smtplib  # 加载smtplib模块
-from email.mime.text import MIMEText
-from email.utils import formataddr
 from email.mime.application import MIMEApplication
 from email.mime.image import MIMEImage
 from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+from email.utils import formataddr
 
 sender = '384341396@qq.com'  # 发件人邮箱账号
 receive = 'bin.qiu@symbio.com'  # 收件人邮箱账号
@@ -24,8 +24,8 @@ sub = 'Python3 test'
 
 try:
     msg = MIMEMultipart('related')
-    msg['From'] = formataddr(["Test", sender])  # 发件人邮箱昵称、发件人邮箱账号
-    msg['To'] = formataddr(["QQ", receive])  # 收件人邮箱昵称、收件人邮箱账号
+    msg['From'] = formataddr(("Test", sender))  # 发件人邮箱昵称、发件人邮箱账号
+    msg['To'] = formataddr(("QQ", receive))  # 收件人邮箱昵称、收件人邮箱账号
     msg['Subject'] = sub
     # 文本信息
     # txt = MIMEText('this is a test mail', 'plain', 'utf-8')

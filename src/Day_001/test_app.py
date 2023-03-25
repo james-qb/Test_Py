@@ -4,10 +4,11 @@
 # @Author  : qiubin
 # @File    : test_app.py
 # @Software: PyCharm
-
+import os
+import time
 
 from appium import webdriver
-import time
+
 desired_caps = {
     'platformName': 'Android',
     # 用真机的时候，这个参数deviceName没什么用，但是还是必须要有这个参数，值的话随便填就行了
@@ -24,3 +25,5 @@ desired_caps = {
 driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 time.sleep(60)
 driver.quit()
+
+os.scandir("D:")

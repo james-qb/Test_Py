@@ -31,4 +31,4 @@ def compare(pic1, pic2):
         return differ
 
 
-compare(r'D:\1_1.png', r'D:\1_3.png')
+compare(r'D:\360Downloads\IMG_0020.JPG', r'D:\360Downloads\IMG_0021.JPG')

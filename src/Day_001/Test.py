@@ -5,12 +5,19 @@
 # @File    : Test.py
 # @Software: PyCharm
 
+import datetime
+import sys
+import time
+import xlsxwriter
+
 import matplotlib.pyplot as plt
+import os
+import re
+import serial
 from PIL import Image
-import serial, os, re
-import time, sys, xlsxwriter, datetime
 
 sys.setrecursionlimit(20000)
+
 
 class Xllgoinfo(object):
     def __init__(self, path=''):
@@ -114,12 +121,12 @@ def getserial(pid):
                 else:
                     xinfo.log_write(times, track_id, liveness, score, id, next_mode, name, '识别率未达到')
             ser.flushInput()
-            os.system(('taskkill /IM %s /F') % pid)
+            os.system('taskkill /IM %s /F' % pid)
         elif data == 'unknow':
             xinfo.log_write('unknow')
         else:
             ser.flushInput()
-            os.system(('taskkill /IM %s /F') % pid)
+            os.system('taskkill /IM %s /F' % pid)
             continue
     xinfo.log_close()
 
