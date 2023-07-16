@@ -47,7 +47,7 @@ w_sum = sum(w_lst)
 #             wdp[i][j + w_lst[i - 1]] = 1
 #             wdp[i][abs(j - w_lst[i - 1])] = 1
 # print(wdp)
-
+# 节省空间,采用临时tmp_dp,记录上次的结果
 dp = [0 for _ in range(w_sum + 1)]
 dp[0] = 1
 tmp_dp = dp[::]
