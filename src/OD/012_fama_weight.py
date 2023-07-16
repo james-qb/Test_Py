@@ -31,11 +31,11 @@
 输出格式
 输出一个整数代表答案。
 """
-# w_num = 6
-# w_lst = list(map(int, '1 2 7 10 20 50'.strip().split(' ')))
+w_num = 6
+w_lst = list(map(int, '1 2 7 10 20 50'.strip().split(' ')))
 
-w_num = 3
-w_lst = list(map(int, '1 4 6'.strip().split(' ')))
+# w_num = 3
+# w_lst = list(map(int, '1 4 6'.strip().split(' ')))
 
 w_sum = sum(w_lst)
 # wdp = [[0] * (w_sum + 1) for _ in range(w_num + 1)]
@@ -66,3 +66,23 @@ for num in w_lst:
         tmp_set.add(abs(tmp - num))
     sum_set |= tmp_set
 print(sum_set)
+# 递归法
+v = [0] * (w_sum + 1)
+
+count = 0
+
+
+def dfs(sum_, i):
+    global count
+    count += 1
+    v[sum_] = 1
+    if i == len(w_lst):
+        return None
+    dfs(sum_ + w_lst[i], i + 1)
+    dfs(sum_, i + 1)
+    dfs(abs(sum_ - w_lst[i]), i + 1)
+
+
+dfs(0, 0)
+print(v)
+print(count)
