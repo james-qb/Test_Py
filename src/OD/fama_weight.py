@@ -32,18 +32,28 @@
 输出一个整数代表答案。
 """
 # w_num = 6
-# w_lst = list(map(int, '1 2 5 10 20 50'.strip().split(' ')))
+# w_lst = list(map(int, '1 2 7 10 20 50'.strip().split(' ')))
 
 w_num = 3
 w_lst = list(map(int, '1 4 6'.strip().split(' ')))
 
 w_sum = sum(w_lst)
-wdp = [[0] * (w_sum + 1) for _ in range(w_num + 1)]
-wdp[0][0] = 1
-for i in range(1, w_num + 1):
-    for j in range(w_sum + 1):
-        if wdp[i - 1][j]:
-            wdp[i][j] = 1
-            wdp[i][j + w_lst[i - 1]] = 1
-            wdp[i][abs(j - w_lst[i - 1])] = 1
-print(wdp)
+# wdp = [[0] * (w_sum + 1) for _ in range(w_num + 1)]
+# wdp[0][0] = 1
+# for i in range(1, w_num + 1):
+#     for j in range(w_sum + 1):
+#         if wdp[i - 1][j]:
+#             wdp[i][j] = 1
+#             wdp[i][j + w_lst[i - 1]] = 1
+#             wdp[i][abs(j - w_lst[i - 1])] = 1
+# print(wdp)
+
+dp = [0 for _ in range(w_sum + 1)]
+dp[0] = 1
+tmp_dp = dp[::]
+for i in range(0, w_num):
+    for j in range(w_sum, -1, -1):
+        if tmp_dp[j] == 1:
+            dp[j] = dp[abs(j - w_lst[i])] = dp[j + w_lst[i]] = 1
+    tmp_dp = dp[::]
+print(dp)
