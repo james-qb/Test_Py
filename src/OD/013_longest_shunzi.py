@@ -4,7 +4,7 @@
   @Time    : 2023/7/2 10:26
   @Description:描述
   @Author  : qiubin 
-  @File    : longest_shunzi.py
+  @File    : 013_longest_shunzi.py
   @Software: PyCharm
 """
 # hand_porker = "3-3-3-3-4-4-5-5-6-7-8-9-10-J-Q-K-A"

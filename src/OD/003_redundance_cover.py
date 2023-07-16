@@ -12,6 +12,6 @@ s2 = input()
 k = int(input())
 
 if len(s2) < len(s1) or k < 0:
-    return result = -1
+    print(-1)
 else:
-    return s2
+    print(s2)

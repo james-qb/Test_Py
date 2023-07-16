@@ -4,7 +4,7 @@
   @Time    : 2023/6/5 22:31
   @Description:描述
   @Author  : qiubin 
-  @File    : fama_weight.py
+  @File    : 012_fama_weight.py
   @Software: PyCharm
 """
 # n = 6

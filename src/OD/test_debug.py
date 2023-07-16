@@ -4,7 +4,7 @@
   @Time    : 2023/6/3 10:09
   @Description:描述
   @Author  : qiubin
-  @File    : 001_max_num.py
+  @File    : 000_max_num.py
   @Software: PyCharm
 """
 from collections import Counter
